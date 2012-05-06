@@ -21,7 +21,7 @@ use JSON;
 use CGI::Fast;
 use DateTime;
 
-# Wasted 2 hours when all I needed was this. Maintainer, please make it the default.
+# Wasted 2 hours when all I needed was this.
 $MongoDB::BSON::looks_like_number = 1;
 
 # connect to mongodb
