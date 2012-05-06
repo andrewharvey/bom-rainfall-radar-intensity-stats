@@ -21,7 +21,8 @@ use JSON;
 use CGI::Fast;
 use DateTime;
 
-# Wasted 2 hours when all I needed was this.
+# needed to force the $q_time_start and $q_time_end to behave as numbers
+# read the module documentation for details
 $MongoDB::BSON::looks_like_number = 1;
 
 # connect to mongodb
