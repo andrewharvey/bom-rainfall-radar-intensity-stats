@@ -74,6 +74,8 @@ while (my $q = new CGI::Fast) {
   # write out over HTTP / serialise to JSON
   print "Content-Type: text/json\n";
   print "\n";
-  print encode_json(\@reduced_rows)."\n";
+
+  my $json = JSON->new;
+  print $json->pretty->encode(\@reduced_rows)."\n";
 }
 
