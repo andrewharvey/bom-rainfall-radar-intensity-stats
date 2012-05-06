@@ -59,7 +59,13 @@ while (my $q = new CGI::Fast) {
     my %reduced_row_hash;
     foreach my $k (keys $row) {
       if ($k ne "_id") {
-        $reduced_row_hash{$k} = $row->{$k};
+        if ($k eq "datetime") {
+          if ($row->{$k} =~ /(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/) {
+            $reduced_row_hash{"date"} = "$1-$2-$3T$4:$5:00Z";
+          }
+        }else{
+          $reduced_row_hash{$k} = $row->{$k};
+        }
       }
     }
     push @reduced_rows, \%reduced_row_hash;
