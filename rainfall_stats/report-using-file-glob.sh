@@ -10,11 +10,11 @@
 # rights to this work.
 # http://creativecommons.org/publicdomain/zero/1.0/
 
-report=radar_stats.csv
+report=../radar_stats.csv
 
 echo "radar,datetime,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15" > $report
 
-for f in IDR/IDR*.T.*.png
+for f in ../IDR/IDR*.T.*.png
 do
   r=`echo "$f" | grep -oE 'IDR[0-9]+\.' | sed 's/\.$//'`
   if [ "$r" != "" ] ; then # don't get stats of radar images which are IDR\d\d[^\d]\.
