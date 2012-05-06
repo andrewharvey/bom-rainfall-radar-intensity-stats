@@ -26,8 +26,8 @@
 // source BOM radar image
 IplImage *src_image = 0;
 
-// match the given RGB colour to a colour from the palate
-int match_to_palate(uchar b, uchar g, uchar r);
+// match the given RGB colour to a colour from the palette
+int match_to_palette(uchar b, uchar g, uchar r);
 
 // which pixel (in the 256*256 reduced size image) shall we start looking at
 // (because the BOM copyright notice is at the top and blocks out the radar contents)
@@ -88,7 +88,7 @@ int main( int argc, char** argv )
             reduced->imageData + y * reduced->widthStep
         );
         for (x = 0; x < reduced->width; x++) {
-            occurrences[match_to_palate(p[3*x+0], p[3*x+1], p[3*x+2])]++;
+            occurrences[match_to_palette(p[3*x+0], p[3*x+1], p[3*x+2])]++;
         }
     }
 
@@ -107,7 +107,7 @@ int main( int argc, char** argv )
 
     assert (totalPixels == ((YSTOP - YSTART + 1) * 256));
 
-    // the last index counts colours not in our known palate
+    // the last index counts colours not in our known palette
     // there shouldn't be any of these
     assert (occurrences[NUM_COLOURS] == 0);
 
@@ -119,8 +119,8 @@ int main( int argc, char** argv )
     return EXIT_SUCCESS;
 }
 
-// Given BGR (opposite order to RGB) values return the palate index for that BGR
-int match_to_palate(uchar b, uchar g, uchar r) {
+// Given BGR (opposite order to RGB) values return the palette index for that BGR
+int match_to_palette(uchar b, uchar g, uchar r) {
     if ((b == 0) && (g == 0) && (r == 0))
         return 0; // transparent
     else if ((b == 255) && (g == 245) && (r == 245))
