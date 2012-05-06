@@ -10,7 +10,7 @@
 # rights to this work.
 # http://creativecommons.org/publicdomain/zero/1.0/
 
-report=radar_stats.csv
+report=$1
 
 # we need this to prepend to file references where those files are in the same
 # directory as this script
