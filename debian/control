@@ -1,0 +1,22 @@
+Source: bom-rainfall-radar-intensity-stats
+Section: science
+Priority: extra
+Maintainer: Andrew Harvey <andrew.harvey4@gmail.com>
+Build-Depends:
+ libopencv-imgproc-dev
+ , libopencv-highgui-dev
+Standards-Version: 3.9.2
+Vcs-Git: git://github.com/andrewharvey/bom-rainfall-radar-intensity-stats.git
+Vcs-Browser: https://github.com/andrewharvey/bom-rainfall-radar-intensity-stats/
+
+Package: bom-rainfall-radar-intensity-stats
+Architecture: all
+Depends:
+ libopencv-core2.3
+ , libopencv-imgproc2.3
+ , libopencv-highgui2.3
+Description: Produce rainfall statistics from the BOM rainfall radar images 
+ Given rainfall radar images from the Bureau of Meteorology, this package
+ produces statistics on the rainfall from that radar image.
+ .
+ This package produces the raw CSV output.
