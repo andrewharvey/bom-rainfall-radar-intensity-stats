@@ -40,6 +40,9 @@ different rainfall intensity occurrences over time.
  * user can change time range
  * user can change time scale
  * show source radar image for cursor location
+* Allow user to select geographic region to limit results to
+* Store radar image in PostGIS as a raster and possibly cut out rainfall_stats and
+  rest-api as a result
 
 # License
 All the files within this repository are released under the
