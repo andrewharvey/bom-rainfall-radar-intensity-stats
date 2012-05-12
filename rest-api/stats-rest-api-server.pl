@@ -64,7 +64,14 @@ while (my $q = new CGI::Fast) {
             $reduced_row_hash{"date"} = "$1-$2-$3T$4:$5:00Z";
           }
         }else{
-          $reduced_row_hash{$k} = $row->{$k};
+          my $new_k;
+          # JavaScript associative arrays are best not started with a number, so add a v
+          if ($k =~ /^\d+$/) {
+              $new_k = 'v' . $k;
+          }else{
+              $new_k = $k;
+          }
+          $reduced_row_hash{$new_k} = $row->{$k};
         }
       }
     }
