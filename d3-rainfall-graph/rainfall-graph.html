@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+body {
+  font: 10px sans-serif;
+}
+
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+/* Colours for each of the values */
+/* I would like to use the same colour selection as the BOM Radar images, but
+   the license does not meet my personal "freeness" threshold for inclusion. */
+.v1 { fill: #E3E9FF; }
+.v2 { fill: #BCCCFF; }
+.v3 { fill: #98AFF8; }
+.v4 { fill: #6586EB; }
+.v5 { fill: #3558BF; }
+.v6 { fill: #3380B1; }
+.v7 { fill: #288B97; }
+.v8 { fill: #207F5A; }
+.v9 { fill: #0D5613; }
+.v10 { fill: #254B08; }
+.v11 { fill: #3A4B08; }
+.v12 { fill: #4B4808; }
+.v13 { fill: #4B3608; }
+.v14 { fill: #3C1B09; }
+.v15 { fill: #290001; }
+
+/* graph background colour */
+.background { fill: #2B2B2B; }
+
+</style>
+<body>
+<div id="rainfall-graph"></div>
+<script src="/javascript/d3/d3.v2.js"></script>
+<script src="rainfall-graph.js"></script>
+</body>
