@@ -33,13 +33,17 @@ server (try `make sample-export`) you can open up rainfall-graph.html which
 (once you have configured it to find the d3 library) produce a graph of the
 different rainfall intensity occurrences over time.
 
+## dygraphs-rainfall-graph
+Like `d3-rainfall-graph`, the code in `dygraphs-rainfall-graph` produces a graph,
+but using the Dygraphs library instead of D3. Dygraphs requires less code and
+already supports interactivity. Rather than consuming a JSON file it consumes a
+CSV file as produced by `csv2dygraphs.pl`. A sample will be produced using
+`make sample-export`.
+
 # TODO
 * Try to get the BOM to release the radar images under CC-BY as per the [Intellectual Property Principles for Australian Government Agencies](http://www.ag.gov.au/Copyright/Pages/StatementofIntellectualPropertyPrinciplesforAustralianGovernmentAgencies.aspx) so I can release a public demo.
 * Allow the whole process to run in real time
-* Make the graph dynamic
- * user can change time range
- * user can change time scale
- * show source radar image for cursor location
+* Show source radar image for cursor location
 * Allow user to select geographic region to limit results to
 * Store radar image in PostGIS as a raster and possibly cut out rainfall_stats and
   rest-api as a result
